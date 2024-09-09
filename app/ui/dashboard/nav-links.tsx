@@ -4,19 +4,20 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
-  SvgIconComponent,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 // Define the type for the link objects
 interface LinkItem {
   name: string;
   href: string;
-  icon: (props: React.ComponentProps<"svg">) => JSX.Element;
+  icon: (props: React.ComponentProps<"svg">) => JSX.Element; // This line is correct
 }
 
+// Define your navigation links here
 const links: LinkItem[] = [
   { name: "Dashboard", href: "/dashboard", icon: HomeIcon },
   { name: "Customers", href: "/dashboard/customers", icon: UserGroupIcon },
@@ -33,7 +34,7 @@ export default function NavLinks() {
   return (
     <>
       {links.map((link) => {
-        const LinkIcon = link.icon;
+        const LinkIcon = link.icon; // Get the icon component
         return (
           <Link
             key={link.name}
