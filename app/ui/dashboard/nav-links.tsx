@@ -14,7 +14,7 @@ import { ReactNode } from "react";
 interface LinkItem {
   name: string;
   href: string;
-  icon: (props: React.ComponentProps<"svg">) => JSX.Element; // This line is correct
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
 
 // Define your navigation links here
