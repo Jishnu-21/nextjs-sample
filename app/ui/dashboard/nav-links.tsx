@@ -34,7 +34,7 @@ export default function NavLinks() {
   return (
     <>
       {links.map((link) => {
-        const LinkIcon = link.icon; // Get the icon component
+        const LinkIcon = link.icon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
         return (
           <Link
             key={link.name}
